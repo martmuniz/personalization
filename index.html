@@ -4,27 +4,6 @@
     <meta charset="UTF-8">
     <title>My Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script runat="server">
-    Platform.Load("core","1");
-
-    var csp = ""
-      + "default-src 'self' https://cdn.evergage.com https://cdn.c360a.salesforce.com; "
-      // Añadimos 'unsafe-eval' SOLO como medida temporal
-      + "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.evergage.com https://cdn.c360a.salesforce.com; "
-      + "style-src  'self' 'unsafe-inline' https://cdn.evergage.com; "
-      + "img-src    'self' data: https://cdn.evergage.com; "
-      + "font-src   'self' data: https://cdn.evergage.com; "
-      + "connect-src 'self' https://cdn.evergage.com https://cdn.c360a.salesforce.com; "
-      + "frame-ancestors 'self';";
-
-    Platform.Response.SetResponseHeader("Content-Security-Policy", csp);
-    Platform.Response.SetResponseHeader("X-Frame-Options", "SAMEORIGIN");
-    Platform.Response.SetResponseHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
-    Platform.Response.SetResponseHeader("Referrer-Policy", "strict-origin-when-cross-origin");
-    Platform.Response.SetResponseHeader("X-Content-Type-Options", "nosniff");
-    // Platform.Response.SetResponseHeader("X-XSS-Protection","1; mode=block"); // obsoleto
-    </script>
-
     <style>
         * {
             box-sizing: border-box;
